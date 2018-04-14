@@ -14,18 +14,19 @@
 # https://github.com/brigade/overcommit#configuration
 #
 # Uncomment the following lines to make the configuration take effect.
+# command: ['bundle', 'exec', 'rubocop']
 
-PreCommit:
- RuboCop:
-   enabled: true
-   on_warn: fail # Treat all warnings as failures
+# PreCommit:
+#  RuboCop:
+#    enabled: true
+#    on_warn: fail # Treat all warnings as failures
 
- TrailingWhitespace:
-   enabled: true
-   exclude:
-     - '**/db/structure.sql' # Ignore trailing whitespace in generated files
-     - 'Gemfile'
-     - 'LICENSE.md'
+#  TrailingWhitespace:
+#    enabled: true
+#    exclude:
+#      - '**/db/structure.sql' # Ignore trailing whitespace in generated files
+#      - 'Gemfile'
+#      - 'LICENSE.md'
 
 #PostCheckout:
 #  ALL: # Special hook name that customizes all hooks of this type
