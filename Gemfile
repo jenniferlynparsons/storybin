@@ -39,7 +39,6 @@ gem 'devise'
 gem "pundit" 
 gem "rolify" 
  
-gem 'simple_form' 
 gem 'draper'
 gem 'kaminari' 
 gem 'shrine-gdrive_storage', git: 'https://github.com/jenniferlynparsons/shrine-gdrive_storage' 
