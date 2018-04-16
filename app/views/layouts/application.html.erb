@@ -11,9 +11,10 @@
 
   <body>
     <%= render 'layouts/navigation' %> 
-    <div class="container"> 
-      <% if notice || alert %> 
-        <div class="section"> 
+
+    <% if notice || alert %> 
+      <section class="section"> 
+        <div class="container">
           <% if notice %> 
             <div class="notification is-success"> 
               <p><%= notice %></p> 
@@ -23,11 +24,12 @@
             <div class="notification is-danger"> 
               <p><%= alert %></p> 
             </div> 
-          <% end %>         
-        </div> 
-      <% end %> 
+          <% end %>
+        </div>       
+      </section> 
+    <% end %> 
 
-      <%= yield %> 
-    </div>
+    <%= yield %> 
+
   </body>
 </html>

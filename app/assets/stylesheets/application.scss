@@ -16,3 +16,11 @@
 
 $primary: hsl(217, 71%, 53%); //same as $blue
 @import "bulma";
+
+form {
+  margin-bottom: 1.5rem;
+}
+
+.mb-5 {
+  margin-bottom: 0.5rem;
+}
