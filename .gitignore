@@ -21,3 +21,10 @@
 \.DS_Store
 
 /coverage
+
+config/secrets.yml
+
+# Ignore encrypted secrets key file.
+config/secrets.yml.key
+
+config/secrets\.yml\.enc
