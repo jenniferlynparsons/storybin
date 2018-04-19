@@ -15,6 +15,9 @@
 #  last_sign_in_ip        :inet
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  admin                  :boolean          default(FALSE), not null
+#  editor                 :boolean          default(FALSE), not null
+#  submitter              :boolean          default(TRUE)
 #
 # Indexes
 #
