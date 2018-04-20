@@ -22,9 +22,10 @@
 
 /coverage
 
-config/secrets.yml
+/config/secrets.yml
+/config/local_env.yml
 
 # Ignore encrypted secrets key file.
-config/secrets.yml.key
+/config/secrets.yml.key
 
-config/secrets\.yml\.enc
+/config/secrets\.yml\.enc
