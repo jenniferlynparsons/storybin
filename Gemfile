@@ -55,6 +55,7 @@ group :development, :test do
   gem 'selenium-webdriver' 
   gem 'rubocop', '~> 0.54.0', require: false 
   gem 'factory_bot' 
+  gem 'faker', '~> 1.6', '>= 1.6.6'
   gem 'simplecov', require: false
 end 
  
