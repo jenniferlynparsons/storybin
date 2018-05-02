@@ -22,6 +22,8 @@
 #  admin                  :boolean          default(FALSE), not null
 #  editor                 :boolean          default(FALSE), not null
 #  submitter              :boolean          default(TRUE)
+#  first_name             :string
+#  last_name              :string
 #
 # Indexes
 #
@@ -34,4 +36,6 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  validates_presence_of :first_name, :last_name, :email, :password
 end
