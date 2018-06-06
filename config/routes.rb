@@ -9,13 +9,13 @@
 #            user_password PATCH  /users/password(.:format)      devise/passwords#update
 #                          PUT    /users/password(.:format)      devise/passwords#update
 #                          POST   /users/password(.:format)      devise/passwords#create
-# cancel_user_registration GET    /users/cancel(.:format)        devise/registrations#cancel
-#    new_user_registration GET    /users/sign_up(.:format)       devise/registrations#new
-#   edit_user_registration GET    /users/edit(.:format)          devise/registrations#edit
-#        user_registration PATCH  /users(.:format)               devise/registrations#update
-#                          PUT    /users(.:format)               devise/registrations#update
-#                          DELETE /users(.:format)               devise/registrations#destroy
-#                          POST   /users(.:format)               devise/registrations#create
+# cancel_user_registration GET    /users/cancel(.:format)        registrations#cancel
+#    new_user_registration GET    /users/sign_up(.:format)       registrations#new
+#   edit_user_registration GET    /users/edit(.:format)          registrations#edit
+#        user_registration PATCH  /users(.:format)               registrations#update
+#                          PUT    /users(.:format)               registrations#update
+#                          DELETE /users(.:format)               registrations#destroy
+#                          POST   /users(.:format)               registrations#create
 #                          GET    /pages/:page(.:format)         pages#show
 #                     root GET    /                              pages#show {:page=>"home"}
 # 
