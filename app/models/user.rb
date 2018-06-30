@@ -24,6 +24,7 @@
 #  submitter              :boolean          default(TRUE)
 #  first_name             :string
 #  last_name              :string
+#  available              :string
 #
 # Indexes
 #

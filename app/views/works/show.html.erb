@@ -1,0 +1,32 @@
+<section class="section">
+  <div class="container">
+    <p id="notice">
+      <%= notice %>
+    </p>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-one-quarter">
+        <p>
+          <strong>Title:</strong>
+          <%= @work.title %>
+        </p>
+
+        <p>
+          <strong>Author:</strong>
+          <%= @work.author %>
+        </p>
+
+        <p>
+          <strong>Workfile:</strong>
+          <%= @work.workfile %>
+        </p>
+
+        <%= link_to 'Edit', edit_work_path(@work) %> |
+          <%= link_to 'Back', works_path %>
+      </div>
+    </div>
+  </div>
+</section>

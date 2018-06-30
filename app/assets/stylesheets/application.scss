@@ -16,11 +16,14 @@
 
 $primary: hsl(217, 71%, 53%); //same as $blue
 @import "bulma";
-
 form {
-  margin-bottom: 1.5rem;
+  margin-bottom: 24px;
 }
 
-.mb-5 {
-  margin-bottom: 0.5rem;
+.mb-24 {
+  margin-bottom: 24px;
+}
+
+.buttons {
+  padding-top: 24px;
 }

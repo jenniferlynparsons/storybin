@@ -1,0 +1,48 @@
+<section class="section">
+  <div class="container">
+    <p id="notice">
+      <%= notice %>
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-one-quarter">
+        <p>
+          <strong>Cover letter:</strong>
+          <%= @submission.cover_letter %>
+        </p>
+
+        <p>
+          <strong>Active:</strong>
+          <%= @submission.active %>
+        </p>
+
+        <p>
+          <strong>Simultaneous:</strong>
+          <%= @submission.simultaneous %>
+        </p>
+
+        <p>
+          <strong>Reprint:</strong>
+          <%= @submission.reprint %>
+        </p>
+
+        <p>
+          <strong>Reprint date:</strong>
+          <%= @submission.reprint_date %>
+        </p>
+
+        <p>
+          <strong>Status:</strong>
+          <%= @submission.status %>
+        </p>
+
+        <%= link_to 'Edit', edit_submission_path(@submission) %> |
+          <%= link_to 'Back', submissions_path %>
+      </div>
+    </div>
+  </div>
+</section>
