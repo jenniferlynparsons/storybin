@@ -1,32 +1,35 @@
 <%= form_with(model: work, local: true) do |form| %>
   <% if work.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(work.errors.count, "error") %> prohibited this work from being saved:</h2>
+      <h2>
+        <%= pluralize(work.errors.count, "error") %> prohibited this work from being saved:</h2>
 
       <ul>
-      <% work.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% work.errors.full_messages.each do |message| %>
+          <li>
+            <%= message %>
+          </li>
+          <% end %>
       </ul>
     </div>
-  <% end %>
+    <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :work_title %>
-  </div>
+      <div class="field">
+        <%= form.label :title %>
+          <%= form.text_field :title, id: :work_title %>
+      </div>
 
-  <div class="field">
-    <%= form.label :author %>
-    <%= form.text_field :author, id: :work_author %>
-  </div>
+      <div class="field">
+        <%= form.label :author %>
+          <%= form.text_field :author, id: :work_author %>
+      </div>
 
-  <div class="field">
-    <%= form.label :workfile %>
-    <%= form.text_field :workfile, id: :work_workfile %>
-  </div>
+      <div class="field">
+        <%= form.label :file %>
+          <%= form.file_field :file, id: :work_file %>
+      </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+      <div class="actions">
+        <%= form.submit %>
+      </div>
+      <% end %>

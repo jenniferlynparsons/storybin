@@ -34,3 +34,7 @@
 /config/application.yml
 
 local_env\.yml
+
+\.env
+
+config/client_secret\.json
