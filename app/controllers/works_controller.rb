@@ -25,6 +25,7 @@ class WorksController < ApplicationController
   # POST /works.json
   def create
     @work = Work.new(work_params)
+    @work.user = current_user
 
     respond_to do |format|
       if @work.save
@@ -69,6 +70,6 @@ class WorksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def work_params
-      params.require(:work).permit(:file, :title, :author)
+      params.require(:work).permit(:file, :title, :author, :user_id)
     end
 end

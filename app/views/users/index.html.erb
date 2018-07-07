@@ -1,0 +1,45 @@
+<section class="section">
+  <div class="container">
+    <p id="notice">
+      <%= notice %>
+    </p>
+
+
+    <h1 class="title">Users</h1>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Author</th>
+          <th>Email</th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <td>
+              <%= user.first_name %>
+            </td>
+            <td>
+              <%= user.last_name %>
+            </td>
+            <td>
+              <%= user.email %>
+            </td>
+            <td>
+              <%= link_to 'Show', user %>
+            </td>
+          </tr>
+          <% end %>
+      </tbody>
+    </table>
+
+
+  </div>
+</section>
