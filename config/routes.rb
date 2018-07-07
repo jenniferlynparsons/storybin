@@ -1,6 +1,8 @@
 # == Route Map
 #
 #                   Prefix Verb   URI Pattern                     Controller#Action
+#               users_show GET    /users/show(.:format)           users#show
+#              users_index GET    /users/index(.:format)          users#index
 #                    works GET    /works(.:format)                works#index
 #                          POST   /works(.:format)                works#create
 #                 new_work GET    /works/new(.:format)            works#new
@@ -32,6 +34,14 @@
 #                          PUT    /users(.:format)                registrations#update
 #                          DELETE /users(.:format)                registrations#destroy
 #                          POST   /users(.:format)                registrations#create
+#                    users GET    /users(.:format)                users#index
+#                          POST   /users(.:format)                users#create
+#                 new_user GET    /users/new(.:format)            users#new
+#                edit_user GET    /users/:id/edit(.:format)       users#edit
+#                     user GET    /users/:id(.:format)            users#show
+#                          PATCH  /users/:id(.:format)            users#update
+#                          PUT    /users/:id(.:format)            users#update
+#                          DELETE /users/:id(.:format)            users#destroy
 #                   issues GET    /issues(.:format)               issues#index
 #                          POST   /issues(.:format)               issues#create
 #                new_issue GET    /issues/new(.:format)           issues#new
@@ -45,12 +55,17 @@
 
 Rails.application.routes.draw do
 
+  get 'users/show'
+
+  get 'users/index'
+
   resources :works
   resources :submissions
 
   devise_for :users, controllers: { registrations: 'registrations' }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
+  resources :users
+  
   resources :issues
 
   # Yay static pages

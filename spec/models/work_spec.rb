@@ -9,6 +9,7 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  file_data  :text
+#  user_id    :integer
 #
 
 require 'rails_helper'
