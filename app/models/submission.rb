@@ -17,4 +17,7 @@
 #
 
 class Submission < ApplicationRecord
+  belongs_to :works
+  belongs_to :issues, condition: { where(active: true) }
+  belongs_to :users
 end

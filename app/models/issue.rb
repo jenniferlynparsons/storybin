@@ -13,4 +13,6 @@
 #
 
 class Issue < ApplicationRecord
+  has_many :submissions
+  has_many :works, through: :submissions
 end

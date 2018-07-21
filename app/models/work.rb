@@ -14,6 +14,8 @@
 
 class Work < ApplicationRecord
   belongs_to :user
+  has_many :submissions
+  has_many :issues, through: :submissions
   
   include WorkUploader[:file]
     validates :title, presence: true
