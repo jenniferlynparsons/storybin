@@ -1,35 +1,46 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Storybin</title>
-    <%= csrf_meta_tags %>
+
+<head>
+  <title>Storybin
+    <%= content_for?(:title) ? ' | ' + content_for(:title) : "" %>
+  </title>
+  <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ"
+      crossorigin="anonymous">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-    <%= render 'layouts/navigation' %> 
+<body>
+  <%= render 'layouts/navigation' %>
 
-    <% if notice || alert %> 
-      <section class="section"> 
+    <% if notice || alert %>
+      <section class="section">
         <div class="container">
-          <% if notice %> 
-            <div class="notification is-success"> 
-              <p><%= notice %></p> 
-            </div> 
-          <% end %>         
-          <% if alert %> 
-            <div class="notification is-danger"> 
-              <p><%= alert %></p> 
-            </div> 
-          <% end %>
-        </div>       
-      </section> 
-    <% end %> 
+          <% if notice %>
+            <div class="notification is-success">
+              <p>
+                <%= notice %>
+              </p>
+            </div>
+            <% end %>
+              <% if alert %>
+                <div class="notification is-danger">
+                  <p>
+                    <%= alert %>
+                  </p>
+                </div>
+                <% end %>
+        </div>
+      </section>
+      <% end %>
 
-    <%= yield %> 
+        <%= render 'layouts/headline' %>
 
-  </body>
+          <%= yield %>
+
+</body>
+
 </html>

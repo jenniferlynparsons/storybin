@@ -1,57 +1,55 @@
-<section class="section">
-  <div class="container">
-    <p id="notice">
-      <%= notice %>
-    </p>
-    <h1 class="title">Issues</h1>
-    <%= link_to 'New Issue', new_issue_path, class:"button is-primary" %>
-  </div>
-</section>
-<section class="section">
-  <div class="container">
-    <div class="columns">
-
-      <% @issues.each do |issue| %>
-        <div class="column is-one-quarter">
-          <div class="card">
-            <header class="card-header">
-              <p class="card-header-title">
-                Issue
-                <%= issue.number %> -
-                  <%= issue.pub_date.strftime("%B %d, %Y")  %>
-              </p>
-            </header>
-            <div class="card-content">
-              <div class="content">
-                <ul>
-                  <li>
-                    Start date:
-                    <%= issue.start_date.strftime("%B %d, %Y") %>
-                  </li>
-                  <li>
-                    End date:
-                    <%= issue.end_date.strftime("%B %d, %Y") %>
-                  </li>
-                  <li>
-                    Activity:
-                    <% if issue.active == true %>
-                      Open
-                      <% else %>
-                        Closed
-                        <% end %>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <footer class="card-footer">
-              <%= link_to 'Show', issue, class:"card-footer-item" %>
-                <%= link_to 'Edit', edit_issue_path(issue), class:"card-footer-item" %>
-                  <%= link_to 'Destroy', issue, method: :delete, data: { confirm: 'Are you sure?' }, class:"card-footer-item" %>
-            </footer>
-          </div>
-        </div>
-        <% end %>
+<%- title "Issues" %>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">Issues</h1>
+      <%= link_to 'New Issue', new_issue_path, class:"button is-primary" %>
     </div>
-  </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="columns">
 
-</section>
+        <% @issues.each do |issue| %>
+          <div class="column is-one-quarter">
+            <div class="card">
+              <header class="card-header">
+                <p class="card-header-title">
+                  Issue
+                  <%= issue.number %> -
+                    <%= issue.pub_date.strftime("%B %d, %Y")  %>
+                </p>
+              </header>
+              <div class="card-content">
+                <div class="content">
+                  <ul>
+                    <li>
+                      Start date:
+                      <%= issue.start_date.strftime("%B %d, %Y") %>
+                    </li>
+                    <li>
+                      End date:
+                      <%= issue.end_date.strftime("%B %d, %Y") %>
+                    </li>
+                    <li>
+                      Activity:
+                      <% if issue.active == true %>
+                        Open
+                        <% else %>
+                          Closed
+                          <% end %>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <footer class="card-footer">
+                <%= link_to 'Show', issue, class:"card-footer-item" %>
+                  <%= link_to 'Edit', edit_issue_path(issue), class:"card-footer-item" %>
+                    <%= link_to 'Destroy', issue, method: :delete, data: { confirm: 'Are you sure?' }, class:"card-footer-item" %>
+              </footer>
+            </div>
+          </div>
+          <% end %>
+      </div>
+    </div>
+
+  </section>

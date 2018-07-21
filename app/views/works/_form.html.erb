@@ -2,7 +2,7 @@
   <% if work.errors.any? %>
     <div id="error_explanation">
       <h2>
-        <%= pluralize(work.errors.count, "error") %> prohibited this work from being saved:</h2>
+        <%= pluralize(work.errors.count, 'error') %> prohibited this work from being saved:</h2>
 
       <ul>
         <% work.errors.full_messages.each do |message| %>
@@ -25,11 +25,12 @@
       </div>
 
       <div class="field">
-        <%= form.label :file %>
+        <%= form.label 'Story File' %>
           <%= form.file_field :file, id: :work_file %>
       </div>
 
       <div class="actions">
-        <%= form.submit %>
+        <%= form.submit 'Add Story', class:'button is-primary' %>
+          <%= link_to 'Cancel', works_path, class:'button' %>
       </div>
       <% end %>

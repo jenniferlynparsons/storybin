@@ -1,13 +1,13 @@
-<section class="section">
-  <div class="container">
-    <div class="columns">
-      <div class="column is-one-quarter">
-        <h1 class="title">New Work</h1>
+<%- title 'New Story' %>
+  <section class="section">
+    <div class="container">
+      <div class="columns">
+        <div class="column">
 
-        <%= render 'form', work: @work %>
+          <%= render 'form', work: @work %>
 
-          <%= link_to 'Back', works_path %>
+
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
