@@ -1,0 +1,47 @@
+<%= form_with(model: submission, local: true) do |form| %>
+  <% if submission.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(submission.errors.count, "error") %> prohibited this submission from being saved:</h2>
+
+      <ul>
+      <% submission.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :cover_letter %>
+    <%= form.text_area :cover_letter, id: :submission_cover_letter %>
+  </div>
+
+  <div class="field">
+    <%= form.label :active %>
+    <%= form.check_box :active, id: :submission_active %>
+  </div>
+
+  <div class="field">
+    <%= form.label :simultaneous %>
+    <%= form.check_box :simultaneous, id: :submission_simultaneous %>
+  </div>
+
+  <div class="field">
+    <%= form.label :reprint %>
+    <%= form.check_box :reprint, id: :submission_reprint %>
+  </div>
+
+  <div class="field">
+    <%= form.label :reprint_date %>
+    <%= form.date_select :reprint_date, id: :submission_reprint_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.text_field :status, id: :submission_status %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
