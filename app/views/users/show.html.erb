@@ -1,69 +1,57 @@
-<section class="section">
-  <div class="container">
-    <h1 class="title">
-      <%= @user.first_name + " " + @user.last_name %>
-    </h1>
-  </div>
-</section>
+<%- title "#{@user.first_name} #{@user.last_name}" %>
 
-<section class="section">
-  <div class="container">
-    <div class="columns">
-      <div class="column is-one-quarter">
-        <p>
-          <strong>Email:</strong>
-          <%= @user.email %>
-        </p>
+  <section class="section">
+    <div class="container">
+      <h2 class="title is-4">Basic Information</h2>
+      <p>
+        <span class="has-text-weight-bold">Email:</span>
+        <%= @user.email %>
+      </p>
 
-
-      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section">
-  <div class="container">
-    <div class="columns">
-      <div class="column">
-        <h2>Stories</h2>
-        <table class="table">
-          <thead>
+  <section class="section">
+    <div class="container">
+      <hr class="hr">
+      <h2 class="title is-4">Stories</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Story Document</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @user.works.each do |work| %>
             <tr>
-              <th>Title</th>
-              <th>Author</th>
-              <th>File</th>
-              <th colspan="3"></th>
+              <td>
+                <%= work.title %>
+              </td>
+              <td>
+                <%= link_to 'View Document', work.file.url %>
+              </td>
+              <td>
+                <span class="icon">
+                  <%= link_to '', work, class:'button is-link is-small fas fa-eye', alt:'View Story' %>
+                </span>
+              </td>
+              <td>
+                <span class="icon">
+                  <%= link_to '', edit_work_path(work), class:'button is-success is-small fas fa-pen', alt:'Edit Story' %>
+                </span>
+              </td>
+              <td>
+                <span class="icon">
+                  <%= link_to '', work, class:'button is-danger is-small fas fa-times', alt:'Delete Story', method: :delete, data: { confirm: 'Are you sure?' } %>
+                </span>
+              </td>
             </tr>
-          </thead>
+            <% end %>
+        </tbody>
+      </table>
 
-          <tbody>
-            <% @user.works.each do |work| %>
-              <tr>
-                <td>
-                  <%= work.title %>
-                </td>
-                <td>
-                  <%= work.author %>
-                </td>
-                <td>
-                  <%= work.file %>
-                </td>
-                <td>
-                  <%= link_to 'Show', work %>
-                </td>
-                <td>
-                  <%= link_to 'Edit', edit_work_path(work) %>
-                </td>
-                <td>
-                  <%= link_to 'Destroy', work, method: :delete, data: { confirm: 'Are you sure?' } %>
-                </td>
-              </tr>
-              <% end %>
-          </tbody>
-        </table>
-
-
-      </div>
     </div>
-  </div>
-</section>
+  </section>

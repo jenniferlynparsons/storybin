@@ -16,21 +16,23 @@
 
       <div class="field">
         <%= form.label :title %>
-          <%= form.text_field :title, id: :work_title %>
+          <div class="control">
+            <%= form.text_field :title, id: :work_title, class: 'input' %>
+          </div>
       </div>
-
       <div class="field">
         <%= form.label :author %>
-          <%= form.text_field :author, id: :work_author %>
+          <div class="control">
+            <%= form.text_field :author, id: :work_author, class: 'input' %>
+          </div>
       </div>
-
       <div class="field">
         <%= form.label 'Story File' %>
-          <%= form.file_field :file, id: :work_file %>
+          <div class="control">
+            <%= form.file_field :file, id: :work_file %>
+          </div>
       </div>
-
-      <div class="actions">
-        <%= form.submit 'Add Story', class:'button is-primary' %>
-          <%= link_to 'Cancel', works_path, class:'button' %>
+      <div class="actions mt-24">
+        <%= form.submit frm_action, class:'button is-primary' %>
       </div>
       <% end %>
