@@ -86,7 +86,7 @@ Storybin is a short story submission manager built in Ruby on Rails 5.0
 
 ## 0.0.0: Apr 12, 2018
 
-  [Added] 
-  - Rails new!
-  - Initial rails configuration
-  - Initial commit
+    [Added] 
+    - Rails new!
+    - Initial rails configuration
+    - Initial commit
