@@ -1,13 +1,13 @@
-<section class="section">
-  <div class="container">
-    <div class="columns">
-      <div class="column is-one-quarter">
-        <h1 class="title">New Submission</h1>
+<%- title 'New Submission'%>
+  <section class="section">
+    <div class="container">
 
-        <%= render 'form', submission: @submission %>
+      <%= render 'form', submission: @submission %>
 
-          <%= link_to 'Back', submissions_path %>
-      </div>
     </div>
-  </div>
-</section>
+  </section>
+  <section class="section">
+    <div class="container">
+      <%= link_to '<< Back to Submissions Index', submissions_path %>
+    </div>
+  </section>
