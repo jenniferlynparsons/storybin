@@ -1,47 +1,62 @@
 <%= form_with(model: submission, local: true) do |form| %>
   <% if submission.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(submission.errors.count, "error") %> prohibited this submission from being saved:</h2>
+      <h2>
+        <%= pluralize(submission.errors.count, "error") %> prohibited this submission from being saved:</h2>
 
       <ul>
-      <% submission.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% submission.errors.full_messages.each do |message| %>
+          <li>
+            <%= message %>
+          </li>
+          <% end %>
       </ul>
     </div>
-  <% end %>
+    <% end %>
 
-  <div class="field">
-    <%= form.label :cover_letter %>
-    <%= form.text_area :cover_letter, id: :submission_cover_letter %>
-  </div>
+      <div class="field">
+        <%= form.label :cover_letter %>
+          <div class="control">
+            <%= form.text_area :cover_letter, id: :submission_cover_letter, class: 'textarea' %>
+          </div>
+      </div>
 
-  <div class="field">
-    <%= form.label :active %>
-    <%= form.check_box :active, id: :submission_active %>
-  </div>
+      <div class="field">
+        <%= form.label :active %>
+          <div class="control">
+            <%= form.check_box :active, id: :submission_active, class: 'checkbox' %>
+          </div>
+      </div>
 
-  <div class="field">
-    <%= form.label :simultaneous %>
-    <%= form.check_box :simultaneous, id: :submission_simultaneous %>
-  </div>
+      <div class="field">
+        <%= form.label :reprint %>
+          <div class="control">
+            <%= form.check_box :reprint, id: :submission_reprint, class: 'checkbox' %>
+          </div>
+      </div>
 
-  <div class="field">
-    <%= form.label :reprint %>
-    <%= form.check_box :reprint, id: :submission_reprint %>
-  </div>
+      <div class="field">
+        <%= form.label :reprint_date %>
+          <div class="control">
+            <%= form.date_select :reprint_date, id: :submission_reprint_date %>
+          </div>
+      </div>
 
-  <div class="field">
-    <%= form.label :reprint_date %>
-    <%= form.date_select :reprint_date, id: :submission_reprint_date %>
-  </div>
+      <div class="field">
+        <%= form.label :reprint_publication %>
+          <div class="control">
+            <%= form.text_field :reprint_publication, id: :submission_reprint_publication, class: 'input' %>
+          </div>
+      </div>
 
-  <div class="field">
-    <%= form.label :status %>
-    <%= form.text_field :status, id: :submission_status %>
-  </div>
+      <div class="field">
+        <%= form.label :status %>
+          <div class="control">
+            <%= form.text_field :status, id: :submission_status, class: 'input' %>
+          </div>
+      </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+      <div class="actions">
+        <%= form.submit class:'button is-primary' %>
+      </div>
+      <% end %>

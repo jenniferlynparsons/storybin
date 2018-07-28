@@ -1,6 +1,18 @@
-<h1>Editing Work</h1>
+<%- title 'Edit Story' %>
+  <section class="section">
+    <div class="container">
+      <div class="columns">
+        <div class="column">
+          <%= render 'form', work: @work %>
 
-<%= render 'form', work: @work %>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <%= link_to 'View Story', @work %> |
+        <%= link_to 'Back to Story Index', works_path %>
 
-<%= link_to 'Show', @work %> |
-<%= link_to 'Back', works_path %>
+    </div>
+  </section>

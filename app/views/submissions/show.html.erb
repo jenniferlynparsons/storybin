@@ -1,48 +1,41 @@
 <section class="section">
   <div class="container">
-    <p id="notice">
-      <%= notice %>
-    </p>
-  </div>
-</section>
+    <div>
+      <p>
+        <span class="has-text-weight-bold">Cover letter:</span>
+      </p>
 
+      <%= @submission.cover_letter %>
+    </div>
+    <div class="mt-24">
+      <p>
+        <span class="has-text-weight-bold">Active:</span>
+        <%= @submission.active %>
+      </p>
+      <p>
+        <span class="has-text-weight-bold">Status:</span>
+        <%= @submission.status %>
+      </p>
+    </div>
+    <div class="mt-24">
+      <p>
+        <span class="has-text-weight-bold">Reprint:</span>
+        <%= @submission.reprint %>
+      </p>
+
+      <p>
+        <span class="has-text-weight-bold">Reprint date:</span>
+        <%= @submission.reprint_date %>
+      </p>
+      <p>
+        <span class="has-text-weight-bold">Reprint publication:</span>
+        <%= @submission.reprint_publication %>
+      </p>
+    </div>
+</section>
 <section class="section">
   <div class="container">
-    <div class="columns">
-      <div class="column is-one-quarter">
-        <p>
-          <strong>Cover letter:</strong>
-          <%= @submission.cover_letter %>
-        </p>
-
-        <p>
-          <strong>Active:</strong>
-          <%= @submission.active %>
-        </p>
-
-        <p>
-          <strong>Simultaneous:</strong>
-          <%= @submission.simultaneous %>
-        </p>
-
-        <p>
-          <strong>Reprint:</strong>
-          <%= @submission.reprint %>
-        </p>
-
-        <p>
-          <strong>Reprint date:</strong>
-          <%= @submission.reprint_date %>
-        </p>
-
-        <p>
-          <strong>Status:</strong>
-          <%= @submission.status %>
-        </p>
-
-        <%= link_to 'Edit', edit_submission_path(@submission) %> |
-          <%= link_to 'Back', submissions_path %>
-      </div>
-    </div>
+    <%= link_to 'Edit Submission', edit_submission_path(@submission) %> |
+      <%= link_to 'Back to Submissions', submissions_path %>
   </div>
 </section>

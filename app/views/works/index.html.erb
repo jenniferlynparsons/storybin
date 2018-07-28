@@ -1,55 +1,50 @@
-<section class="section">
-  <div class="container">
-    <p id="notice">
-      <%= notice %>
-    </p>
-
-
-    <h1 class="title">Works</h1>
-  </div>
-</section>
-<section class="section">
-  <div class="container">
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Title</th>
-          <th>Author</th>
-          <th>Workfile</th>
-          <th colspan="3"></th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <% @works.each do |work| %>
+<%- title 'Stories' %>
+  <section class="section">
+    <div class="container">
+      <p>
+        <%= link_to 'Add New Story', new_work_path, class:'button is-primary' %>
+      </p>
+      <table class="table">
+        <thead>
           <tr>
-            <td>
-              <%= work.title %>
-            </td>
-            <td>
-              <%= work.author %>
-            </td>
-            <td>
-              <%= work.file %>
-            </td>
-            <td>
-              <%= link_to 'Show', work %>
-            </td>
-            <td>
-              <%= link_to 'Edit', edit_work_path(work) %>
-            </td>
-            <td>
-              <%= link_to 'Destroy', work, method: :delete, data: { confirm: 'Are you sure?' } %>
-            </td>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Story Document</th>
+            <th colspan="3"></th>
           </tr>
-          <% end %>
-      </tbody>
-    </table>
+        </thead>
 
-    <br>
+        <tbody>
+          <% @works.each do |work| %>
+            <tr>
+              <td>
+                <%= work.title %>
+              </td>
+              <td>
+                <%= work.author %>
+              </td>
+              <td>
+                <%= link_to 'View Document', work.file.url %>
+              </td>
+              <td>
+                <span class="icon">
+                  <%= link_to '', work, class:'button is-link is-small fas fa-eye', alt:'View Story' %>
+                </span>
+              </td>
+              <td>
+                <span class="icon">
+                  <%= link_to '', edit_work_path(work), class:'button is-success is-small fas fa-pen', alt:'Edit Story' %>
+                </span>
+              </td>
+              <td>
+                <span class="icon">
+                  <%= link_to '', work, class:'button is-danger is-small fas fa-times', alt:'Delete Story', method: :delete, data: { confirm: 'Are you sure?' } %>
+                </span>
+              </td>
+            </tr>
+            <% end %>
+        </tbody>
+      </table>
 
-    <%= link_to 'New Work', new_work_path %>
-
-
-  </div>
-</section>
+    </div>
+  </section>
