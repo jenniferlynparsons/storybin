@@ -1,6 +1,6 @@
-<nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+<nav class="navbar is-light" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <a class="navbar-item" href="">Storybin</a>
+    <a class="navbar-item" href="/">Storybin</a>
 
     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
       <span aria-hidden="true"></span>
@@ -9,20 +9,50 @@
     </a>
   </div>
   <div class="navbar-menu">
-    <div class="navbar-start"></div>
+    <div class="navbar-start">
+
+    </div>
     <div class="navbar-end">
-    <% if user_signed_in? %>
       <div class="navbar-item">
-        <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
-      </div>
-    <% else %>
-      <div class="navbar-item">
-        <%= link_to 'Register', new_user_registration_path %> 
+        <%= link_to 'Users', users_index_path %>
       </div>
       <div class="navbar-item">
-        <%= link_to 'Sign In', new_user_session_path %> 
+        <%= link_to 'Works', works_path %>
       </div>
-    <% end %> 
+      <div class="navbar-item">
+        <%= link_to 'Submissions', submissions_path %>
+      </div>
+      <div class="navbar-item">
+        <%= link_to 'Issues', issues_path %>
+      </div>
+
+      <% if user_signed_in? %>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            <%= current_user.first_name %>
+          </a>
+
+          <div class="navbar-dropdown">
+            <%= link_to 'View Profile', current_user, class: 'navbar-item' %>
+
+              <hr class="navbar-divider">
+              <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'navbar-item' %>
+
+          </div>
+        </div>
+
+        <% else %>
+          <div class="navbar-item">
+            <%= link_to 'Register', new_user_registration_path %>
+          </div>
+          <div class="navbar-item">
+            <%= link_to 'Sign In', new_user_session_path %>
+          </div>
+          <% end %>
+
+
+
+
     </div>
   </div>
 </nav>
