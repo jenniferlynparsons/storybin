@@ -79,6 +79,7 @@ GEM
       xpath (>= 2.0, < 4.0)
     childprocess (0.9.0)
       ffi (~> 1.0, >= 1.0.11)
+    choice (0.2.0)
     coderay (1.1.2)
     concurrent-ruby (1.0.5)
     crass (1.0.4)
@@ -219,6 +220,11 @@ GEM
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
+    rails-erd (1.5.2)
+      activerecord (>= 3.2)
+      activesupport (>= 3.2)
+      choice (~> 0.2.0)
+      ruby-graphviz (~> 1.2)
     rails-html-sanitizer (1.0.4)
       loofah (~> 2.2, >= 2.2.2)
     railties (5.1.6)
@@ -269,6 +275,7 @@ GEM
       unicode-display_width (~> 1.0, >= 1.0.1)
     ruby-debug-ide (0.6.1)
       rake (>= 0.8.1)
+    ruby-graphviz (1.2.3)
     ruby-progressbar (1.9.0)
     ruby_dep (1.5.0)
     rubyzip (1.2.1)
@@ -362,6 +369,7 @@ DEPENDENCIES
   pry-byebug
   pundit
   rails (~> 5.1.6)
+  rails-erd
   rolify
   rspec-rails (~> 3.7)
   rubocop (~> 0.54.0)
