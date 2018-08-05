@@ -6,12 +6,12 @@ RSpec.describe "works/index", type: :view do
       Work.create!(
         :title => "Title",
         :author => "Author",
-        :workfile => "Workfile"
+        :file => "Story Document"
       ),
       Work.create!(
         :title => "Title",
         :author => "Author",
-        :workfile => "Workfile"
+        :file => "Story Document"
       )
     ])
   end
@@ -20,6 +20,6 @@ RSpec.describe "works/index", type: :view do
     render
     assert_select "tr>td", :text => "Title".to_s, :count => 2
     assert_select "tr>td", :text => "Author".to_s, :count => 2
-    assert_select "tr>td", :text => "Workfile".to_s, :count => 2
+    assert_select "tr>td", :text => "Story Document".to_s, :count => 2
   end
 end

@@ -5,7 +5,7 @@
         <span class="has-text-weight-bold">by: </span>
         <%= @work.author %>
       </p>
-      <%= link_to 'View Document', @work.file.url, class: 'button is-primary' %>
+      <%= link_to 'View Document', @work&.file&.url, class: 'button is-primary' %>
     </div>
   </section>
   <section class="section">
