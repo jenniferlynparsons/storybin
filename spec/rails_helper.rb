@@ -24,6 +24,8 @@ require 'rspec/rails'
 #
 # Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
+require 'support/feature_spec_helpers'
+
 # Checks for pending migrations and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove this line.
 ActiveRecord::Migration.maintain_test_schema!
@@ -36,6 +38,9 @@ RSpec.configure do |config|
   # examples within a transaction, remove the following line or assign false
   # instead of true.
   config.use_transactional_fixtures = true
+
+  # Additional Helper Includes
+  config.include FeatureSpecHelpers, type: :feature
 
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and
@@ -60,6 +65,7 @@ RSpec.configure do |config|
   # NOTE -- you need to require factory bot AFTER spec_helper
   require 'support/factory_bot'
   require 'support/faker'
+  
   
   # ...
   ENV['RAILS_ENV'] ||= 'test'

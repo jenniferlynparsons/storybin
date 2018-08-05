@@ -60,7 +60,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13' 
   gem 'selenium-webdriver' 
   gem 'rubocop', '~> 0.54.0', require: false 
-  gem 'factory_bot' 
+  gem 'factory_bot_rails' 
   gem 'faker', '~> 1.6', '>= 1.6.6'
   gem 'simplecov', require: false
   gem "rails-erd"
