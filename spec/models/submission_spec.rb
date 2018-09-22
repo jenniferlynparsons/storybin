@@ -5,7 +5,6 @@
 #  id                  :bigint(8)        not null, primary key
 #  cover_letter        :text
 #  active              :boolean
-#  simultaneous        :boolean
 #  reprint             :boolean
 #  reprint_date        :date
 #  status              :string

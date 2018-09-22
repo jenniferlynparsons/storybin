@@ -32,7 +32,7 @@
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #
 
-require 'spec_helper'
+require 'rails_helper'
 
 feature 'Visitor signs up' do
   scenario 'with valid email and password' do
@@ -72,7 +72,7 @@ feature 'Visitor signs up' do
     fill_in 'Password confirmation', with: password
     fill_in 'First name', with: first
     fill_in 'Last name', with: last
-    click_button 'Sign up'
+    click_button 'Create Account'
   end
 end
 

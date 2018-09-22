@@ -1,16 +1,16 @@
 <%- title @work.title %>
-  <section class="section">
-    <div class="container">
-      <p class="mb-24">
-        <span class="has-text-weight-bold">by: </span>
-        <%= @work.author %>
-      </p>
-      <%= link_to 'View Document', @work&.file&.url, class: 'button is-primary' %>
-    </div>
-  </section>
-  <section class="section">
-    <div class="container">
-      <%= link_to 'Edit Story', edit_work_path(@work) %> |
-        <%= link_to 'Back to Story Index', works_path %>
-    </div>
-  </section>
+<section class="section">
+  <div class="container">
+    <p class="mb-24">
+      <span class="has-text-weight-bold">by: </span>
+      <%= @work&.author %>
+    </p>
+    <%= link_to 'View Document', @work&.file&.url, class: 'button is-primary' %>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <%= link_to 'Edit Story', edit_work_path(@work) %> |
+    <%= link_to 'Back to Story Index', works_path %>
+  </div>
+</section>
