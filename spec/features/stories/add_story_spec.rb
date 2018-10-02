@@ -13,7 +13,7 @@ feature "add a story" do
     fill_in "Title", with: work_fields[:title]
     fill_in "Author", with: work_fields[:author]
     
-    #attach_file "Story file", Rails.root.join("spec", "fixtures", "attachments", "lsq-story.docx")
+    attach_file "work_file", Rails.root.join("spec", "fixtures", "attachments", "lsq-story.docx")
     click_button "Add Story"
     expect(page).to have_content work_fields[:title]
     expect(page).to have_content work_fields[:author]

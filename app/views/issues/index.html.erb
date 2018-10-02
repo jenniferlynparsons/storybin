@@ -44,7 +44,7 @@
           </td>
           <td>
             <span class="icon">
-              <%= link_to '', edit_issue_path(issue), class:'button is-success is-small fas fa-pen', alt:'Edit Issue' %>
+              <%= link_to '', edit_issue_path(issue), id: "edit_issue_#{issue.number}", class:'button is-success is-small fas fa-pen', alt:"Edit Issue #{issue.number}" %>
             </span>
           </td>
           <td>
