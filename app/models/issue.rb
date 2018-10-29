@@ -13,6 +13,10 @@
 #
 
 class Issue < ApplicationRecord
+  validates_presence_of :pub_date
+  validates_presence_of :start_date
+  validates_presence_of :end_date
+  validates_presence_of :number
   has_many :submissions
   has_many :works, through: :submissions
 end

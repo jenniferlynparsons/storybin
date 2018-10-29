@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe "issues/index", type: :view do
   before(:each) do
     assign(:issues, [
-      Issue.create!(),
-      Issue.create!()
+      FactoryBot.create(:issue),
+      FactoryBot.create(:issue)
     ])
   end
 

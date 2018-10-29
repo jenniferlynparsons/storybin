@@ -5,7 +5,6 @@ RSpec.describe "submissions/show", type: :view do
     @submission = assign(:submission, Submission.create!(
       :cover_letter => "MyText",
       :active => false,
-      :simultaneous => false,
       :reprint => false,
       :status => "Status"
     ))
@@ -14,7 +13,6 @@ RSpec.describe "submissions/show", type: :view do
   it "renders attributes in <p>" do
     render
     expect(rendered).to match(/MyText/)
-    expect(rendered).to match(/false/)
     expect(rendered).to match(/false/)
     expect(rendered).to match(/false/)
     expect(rendered).to match(/Status/)

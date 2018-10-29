@@ -30,6 +30,24 @@ require 'support/feature_spec_helpers'
 # If you are not using ActiveRecord, you can remove this line.
 ActiveRecord::Migration.maintain_test_schema!
 
+require "selenium/webdriver"
+
+Capybara.register_driver :chrome do |app|
+  Capybara::Selenium::Driver.new(app, browser: :chrome)
+end
+
+Capybara.register_driver :headless_chrome do |app|
+  capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
+    chromeOptions: { args: %w(headless disable-gpu) }
+  )
+
+  Capybara::Selenium::Driver.new app,
+    browser: :chrome,
+    desired_capabilities: capabilities
+end
+
+Capybara.javascript_driver = :headless_chrome
+
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
@@ -65,8 +83,8 @@ RSpec.configure do |config|
   # NOTE -- you need to require factory bot AFTER spec_helper
   require 'support/factory_bot'
   require 'support/faker'
-  
-  
+
+
   # ...
   ENV['RAILS_ENV'] ||= 'test'
 
@@ -77,3 +95,4 @@ RSpec.configure do |config|
     end
   end
 end
+

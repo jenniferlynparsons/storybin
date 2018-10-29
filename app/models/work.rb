@@ -13,7 +13,7 @@
 #
 
 class Work < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, optional: true
   has_many :submissions
   has_many :issues, through: :submissions
   

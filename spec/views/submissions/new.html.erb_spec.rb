@@ -5,7 +5,6 @@ RSpec.describe "submissions/new", type: :view do
     assign(:submission, Submission.new(
       :cover_letter => "MyText",
       :active => false,
-      :simultaneous => false,
       :reprint => false,
       :status => "MyString"
     ))
@@ -19,8 +18,6 @@ RSpec.describe "submissions/new", type: :view do
       assert_select "textarea[name=?]", "submission[cover_letter]"
 
       assert_select "input[name=?]", "submission[active]"
-
-      assert_select "input[name=?]", "submission[simultaneous]"
 
       assert_select "input[name=?]", "submission[reprint]"
 

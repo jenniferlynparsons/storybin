@@ -1,31 +1,31 @@
 <%- title "Issue #{@issue.number}" %>
-  <section class="section">
-    <div class="container">
-      <p>
-        <span class="has-text-weight-bold">Start date: </span>
-        <%= @issue.start_date.strftime("%B %d, %Y") %>
-      </p>
-      <p>
-        <span class="has-text-weight-bold">End date: </span>
-        <%= @issue.end_date.strftime("%B %d, %Y") %>
-      </p>
-      <p>
-        <span class="has-text-weight-bold">Publish date: </span>
-        <%= @issue.pub_date.strftime("%B %d, %Y") %>
-      </p>
-      <p>
-        <span class="has-text-weight-bold">Activity: </span>
-        <% if @issue.active == true %>
-          Open
-          <% else %>
-            Closed
-            <% end %>
-      </p>
-    </div>
-  </section>
-  <section class="section">
-    <div class="container">
-      <%= link_to 'Edit Issue', edit_issue_path(@issue) %> |
-        <%= link_to 'Back to Index', issues_path %>
-    </div>
-  </section>
+<section class="section">
+  <div class="container">
+    <p>
+      <span class="has-text-weight-bold">Start date: </span>
+      <%= @issue&.start_date&.strftime("%B %d, %Y") %>
+    </p>
+    <p>
+      <span class="has-text-weight-bold">End date: </span>
+      <%= @issue&.end_date&.strftime("%B %d, %Y") %>
+    </p>
+    <p>
+      <span class="has-text-weight-bold">Publish date: </span>
+      <%= @issue&.pub_date&.strftime("%B %d, %Y") %>
+    </p>
+    <p>
+      <span class="has-text-weight-bold">Activity: </span>
+      <% if @issue.active == true %>
+      Open
+      <% else %>
+      Closed
+      <% end %>
+    </p>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <%= link_to 'Edit Issue', edit_issue_path(@issue) %> |
+    <%= link_to 'Back to Index', issues_path %>
+  </div>
+</section>

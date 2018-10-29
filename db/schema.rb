@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(version: 20180728171622) do
   create_table "submissions", force: :cascade do |t|
     t.text "cover_letter"
     t.boolean "active"
-    t.boolean "simultaneous"
     t.boolean "reprint"
     t.date "reprint_date"
     t.string "status"

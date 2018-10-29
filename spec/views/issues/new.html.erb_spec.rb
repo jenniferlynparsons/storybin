@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "issues/new", type: :view do
   before(:each) do
-    assign(:issue, Issue.new())
+    assign(:issue, FactoryBot.build(:issue))
   end
 
   it "renders new issue form" do
