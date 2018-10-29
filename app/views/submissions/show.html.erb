@@ -25,7 +25,7 @@
 
       <p>
         <span class="has-text-weight-bold">Reprint date:</span>
-        <%= @submission.reprint_date %>
+        <%= @submission.reprint_date&.strftime("%B %d, %Y") %>
       </p>
       <p>
         <span class="has-text-weight-bold">Reprint publication:</span>

@@ -1,5 +1,4 @@
 require 'rails_helper'
-require 'factory_bot'
 
 feature "edit an issue" do
   let!(:user) { create(:user, password: "12345678", password_confirmation: "12345678") }

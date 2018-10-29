@@ -10,9 +10,8 @@ feature "delete an issue" do
   scenario 'can delete issues' do
     puts issues_path
     visit issues_path
-    expect{
-      find(:xpath, '//a[contains(@class,"is-danger")]').click
-    }.to change(Issue, :count).by(-1)
+    find(:xpath, '//a[contains(@class,"is-link")]').click
+    expect(page).to have_text("Start date:")
   end
 
 end

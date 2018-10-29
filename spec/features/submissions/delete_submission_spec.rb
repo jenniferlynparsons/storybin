@@ -1,18 +1,18 @@
 require 'rails_helper'
 
-feature "delete an issue" do
+feature "delete an submission" do
   let!(:user) { create(:user, password: "12345678", password_confirmation: "12345678") }
-  let!(:issue){FactoryBot.create(:issue)}
+  let!(:submission){FactoryBot.create(:submission)}
 
   before(:each) do
     sign_in(user)
   end
-  scenario 'can delete issues' do
-    puts issues_path
-    visit issues_path
+  scenario 'can delete submissions' do
+    puts submissions_path
+    visit submissions_path
     expect{
       find(:xpath, '//a[contains(@class,"is-danger")]').click
-    }.to change(Issue, :count).by(-1)
+    }.to change(Submission, :count).by(-1)
   end
 
 end
